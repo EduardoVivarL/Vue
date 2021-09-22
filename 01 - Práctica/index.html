@@ -11,8 +11,9 @@
     <div id="myApp"> 
         
         <input type="text" v-model="inputText" @keypress="updateJson">
+        <button v-on:click="randomColors">Json with random colors</button>
         <hr>
-        <h1>Texto <small>{{inputText}}</small></h1>
+        <h1>Texto</h1>
        
         
             <template v-for="({caracter, isVowel}, index) in charJson"> 

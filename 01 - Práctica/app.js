@@ -1,4 +1,6 @@
 const charJson=[]
+const charArray=[]
+const jsonRandomColors=[]
 
 const app = Vue.createApp({
    
@@ -26,6 +28,20 @@ const app = Vue.createApp({
                 result = true;
             }
             return result;
+        },
+        randomColors(){
+            this.charArray=this.inputText.split("");
+            this.jsonRandomColors=[];
+            for(i=0;i<this.charArray.length;i++){
+                this.jsonRandomColors.push({char:this.charArray[i], 
+                                            color:this.vowelValidation(this.charArray[i]) ?  this.getRandomColor():'#000000'} )
+            }
+           
+           console.log( this.charArray, this.jsonRandomColors);
+
+        },
+        getRandomColor(){
+            return "#"+Math.floor(Math.random()*16777215).toString(16);
         }
     }
       
