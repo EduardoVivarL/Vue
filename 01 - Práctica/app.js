@@ -30,11 +30,12 @@ const app = Vue.createApp({
             return result;
         },
         randomColors(){
+            let baseColor='#000000'
             this.charArray=this.inputText.split("");
             this.jsonRandomColors=[];
             for(i=0;i<this.charArray.length;i++){
                 this.jsonRandomColors.push({char:this.charArray[i], 
-                                            color:this.vowelValidation(this.charArray[i]) ?  this.getRandomColor():'#000000'} )
+                                            color:this.vowelValidation(this.charArray[i]) ?  this.getRandomColor():baseColor} )
             }
            
            console.log( this.charArray, this.jsonRandomColors);
