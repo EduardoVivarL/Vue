@@ -29,7 +29,7 @@ const app = Vue.createApp({
             }
             return result;
         },
-        randomColors(){
+        setRandomColors(){
             let baseColor='#000000'
             this.charArray=this.inputText.split("");
             this.jsonRandomColors=[];
